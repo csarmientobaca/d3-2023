@@ -1,30 +1,30 @@
-import { Container } from 'react-bootstrap';
 import './App.css';
+import { Container } from 'react-bootstrap';
 import NavTop from './components/nav';
 import RowBotom from './components/footer';
-import CardMain from './components/AllTheBooks';
-// import { Row } from "react-bootstrap";
-import CardGroup from 'react-bootstrap/CardGroup';
+// import CardGroup from 'react-bootstrap/CardGroup';
+import Books from "./data/fantasy.json"
+import BookList from './components/BookList';
+import MyJumbo from './components/Jumbo';
+
+import fantasy from "./data/fantasy.json"
+
+
 
 
 function App() {
+  console.log(Books[0])
   return (
     <>
+
       <NavTop></NavTop>
       <Container>
-        <div className="container-fluid py-5">
-          <h1 className="display-5 fw-bold">List of books</h1>
-          <p className="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
-          <button className="btn btn-primary btn-lg" type="button">Example button</button>
-        </div>
-      </Container>
-      <Container>
-        <CardGroup>
+        <MyJumbo></MyJumbo>
+        <BookList
+          books={fantasy}
+        />
 
-          <CardMain>
 
-          </CardMain>
-        </CardGroup>
       </Container>
       <RowBotom name="This is a foooter"></RowBotom>
     </>
